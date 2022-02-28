@@ -13,9 +13,10 @@
 推送镜像先把，httpserver打成image，推入docker hub，这里用的Azure容器注册表服务。
 默认是私有镜像仓库，所以这里要用docker login登录一次。
 
-`root@ubuntuguest:~/images# docker login cloudnativestg1.azurecr.io
-Username: cloudnativestg1
-Password:
+`
+root@ubuntuguest:~/images# docker login cloudnativestg1.azurecr.io`
+`Username: cloudnativestg1`
+`Password:
 WARNING! Your password will be stored unencrypted in /root/snap/docker/1458/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
@@ -25,7 +26,7 @@ c1a8e2b858f1: Pushing  67.07kB/6.077MBd31505fd5050: Preparing`
 推上去之后看下
 
 ImagePullSecrets
-https://kubernetes.io/zh/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+- https://kubernetes.io/zh/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
 
 `cat /root/snap/docker/1458/.docker/config.json | base64 -w0`
 
